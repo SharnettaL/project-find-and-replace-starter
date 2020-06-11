@@ -19,8 +19,37 @@ function getCellElements (currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
 
-
 // YOUR CODE GOES HERE
+replaceAllButton.addEventListener('click', function (){
+    let replace = replaceInput.value
+    let find = findInput.value
+    
+    for(let rowIndex = 0; rowIndex < rowElements.length; rowIndex += 1){
+    
+    let cellElements = getCellElements(rowElements[rowIndex])
+
+
+    for(let cellIndex = 0; cellIndex < cellElements.length; cellIndex +=1){
+        if (cellElements[cellIndex].innerHTML.includes(find)){
+            cellElements[cellIndex].innerHTML = cellElements[cellIndex].innerHTML.replace(find, replace)
+        }
+    }                   //   ^^^   ZACH AND ERIN HELPED! ^^^
+}
+})
+ 
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 // One last thing: dedicate very careful attention to using variables and
@@ -35,4 +64,4 @@ function getCellElements (currentRowElement) {
 // time-cost of ignoring the quality and readability of your code.
 //
 // You can, of course, remove any comments in this starter project once
-// you have read them, if you prefer.
+// you have read them, if you prefer. 
